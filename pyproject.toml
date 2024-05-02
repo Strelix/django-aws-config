@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "aws-config"
+name = "django-aws-config"
 version = "0.0.0"
 description = ""
 authors = ["TreyWW"]
@@ -32,7 +32,7 @@ build-backend = 'setuptools.build_meta'
 
 
 [project]
-name = "aws-config"
+name = "django-aws-config"
 description = "A django package aimed to simplify payment integration into your application"
 readme = "README.md"
 authors = [
