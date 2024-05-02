@@ -1,0 +1,22 @@
+*.sqlite3
+*.db
+
+.coverage
+coverage.xml
+
+venv
+venv/
+
+.idea
+.idea/
+
+# distribution
+
+.dist
+.dist/
+dist
+dist/
+
+*.egg-info
+aws_config.egg-info
+aws_config.egg-info/

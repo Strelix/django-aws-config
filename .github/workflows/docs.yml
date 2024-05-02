@@ -1,0 +1,48 @@
+name: Publish Documentation
+on:
+  push:
+    branches:
+      - master
+
+# only run one build doc workflow at a time, cancel any running ones
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure Git Credentials
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
+      - uses: actions/cache@v4
+        with:
+          key: mkdocs-material-${{ env.cache_id }}
+          path: .cache
+          restore-keys: |
+            mkdocs-material-
+      - run: pip install mkdocs-material mkdocs-git-committers-plugin-2 mike
+      - run: | 
+          git fetch origin gh-pages --depth=1
+          
+          if [ -z ${{ github.event.release.tag_name }}]; then
+            export NEW_VERSION=main
+          else
+            export NEW_VERSION=${{ github.event.release.tag_name }}
+          fi
+          
+          mike deploy --push --update-aliases $NEW_VERSION latest
+      - run: mkdocs gh-deploy --force
+        env:
+          UMAMI_PAGE_URL: ${{ secrets.UMAMI_PAGE_URL }}
+          UMAMI_WEBSITE_ID: ${{ secrets.UMAMI_WEBSITE_ID }}

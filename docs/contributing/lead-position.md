@@ -1,0 +1,2 @@
+Currently we have no soon to come lead positions in mind. After the project calms down and core features are added, I may 
+start to consider accepting someone else as a maintainer. Contact me if you'd be interested in this!
