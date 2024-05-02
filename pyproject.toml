@@ -15,7 +15,7 @@ bump-my-version = "^0.19.3"
 
 [tool.poetry.group.dev.dependencies]
 black = "^24.3.0"
-coverage = "^7.4.4"
+coverage = "^7.5.0"
 
 
 [tool.poetry.group.mkdocs.dependencies]
