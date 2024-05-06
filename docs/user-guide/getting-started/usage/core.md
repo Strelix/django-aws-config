@@ -1,3 +1,0 @@
-# Core usage
-
-Coming Soon
