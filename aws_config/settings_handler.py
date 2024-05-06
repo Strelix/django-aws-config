@@ -6,8 +6,6 @@ from storages.backends.s3 import S3Storage
 
 import logging
 
-from typing_extensions import TypedDict
-
 from aws_config._types import (
     AWSSharedSettings,
     AWSSharedSettingsDict,

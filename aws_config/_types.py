@@ -1,5 +1,7 @@
 import re
-from typing import Optional, NotRequired, TypedDict, Literal
+from typing import Optional, NotRequired, Literal
+
+from typing_extensions import TypedDict
 
 from pydantic import Field, AnyHttpUrl, BaseModel
 
