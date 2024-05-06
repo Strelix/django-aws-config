@@ -9,9 +9,9 @@ pip install django-aws-config
 
 Use as a decorator for your django view:
 ```python
-from aws_config import SettingsHandler
+from aws_config import AWSHandler
 
-SettingsHandler(
+AWSHandler(
 	"Coming Soon"
 )
 ```

@@ -4,7 +4,7 @@
 .coverage
 coverage.xml
 
-venv
+**/venv/
 venv/
 
 .idea
@@ -20,3 +20,5 @@ dist/
 *.egg-info
 aws_config.egg-info
 aws_config.egg-info/
+
+example/media

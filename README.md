@@ -1,3 +1,3 @@
-# Django Umami
+# Django AWS Config
 
 ### Coming soon
