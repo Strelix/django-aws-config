@@ -127,14 +127,25 @@ urllib3 = {version = ">=1.25.4,<2.2.0 || >2.2.0,<3", markers = "python_version >
 crt = ["awscrt (==0.20.9)"]
 
 [[package]]
+name = "bracex"
+version = "2.4"
+description = "Bash style brace expander."
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "bracex-2.4-py3-none-any.whl", hash = "sha256:efdc71eff95eaff5e0f8cfebe7d01adf2c8637c8c92edaf63ef348c241a82418"},
+    {file = "bracex-2.4.tar.gz", hash = "sha256:a27eaf1df42cf561fed58b7a8f3fdf129d1ea16a81e1fadd1d17989bc6384beb"},
+]
+
+[[package]]
 name = "bump-my-version"
-version = "0.19.3"
+version = "0.24.1"
 description = "Version bump your Python project"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "bump-my-version-0.19.3.tar.gz", hash = "sha256:f1c3f686bbac2b9de0fd883ca327167b66e67189e9246b8978af48b43462fdbb"},
-    {file = "bump_my_version-0.19.3-py3-none-any.whl", hash = "sha256:778da1333ce5ee7dee3dcd119a7fed04c4294ade20cc04c087c10465bf534ee6"},
+    {file = "bump_my_version-0.24.1-py3-none-any.whl", hash = "sha256:400e2e116a0d04015c26cc0461f7b30ee9602601561162ff7929a1591c59d829"},
+    {file = "bump_my_version-0.24.1.tar.gz", hash = "sha256:bf7a474aa23519405a739eaf15c782e4bb038e14ae6db234f53a1f61f8fe1441"},
 ]
 
 [package.dependencies]
@@ -145,11 +156,12 @@ questionary = "*"
 rich = "*"
 rich-click = "*"
 tomlkit = "*"
+wcmatch = ">=8.5.1"
 
 [package.extras]
 dev = ["generate-changelog (>=0.7.6)", "git-fame (>=1.12.2)", "pip-tools", "pre-commit"]
 docs = ["black", "markdown-customblocks", "mdx-truly-sane-lists", "mkdocs", "mkdocs-click", "mkdocs-drawio", "mkdocs-gen-files", "mkdocs-git-authors-plugin", "mkdocs-git-committers-plugin", "mkdocs-git-revision-date-localized-plugin", "mkdocs-include-markdown-plugin", "mkdocs-literate-nav", "mkdocs-material", "mkdocstrings[python]", "python-frontmatter"]
-test = ["coverage", "pre-commit", "pytest", "pytest-cov", "pytest-mock"]
+test = ["coverage", "freezegun", "pre-commit", "pytest", "pytest-cov", "pytest-mock", "pytest-sugar"]
 
 [[package]]
 name = "certifi"
@@ -1405,6 +1417,20 @@ files = [
 watchmedo = ["PyYAML (>=3.10)"]
 
 [[package]]
+name = "wcmatch"
+version = "8.5.2"
+description = "Wildcard/glob file name matcher."
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "wcmatch-8.5.2-py3-none-any.whl", hash = "sha256:17d3ad3758f9d0b5b4dedc770b65420d4dac62e680229c287bf24c9db856a478"},
+    {file = "wcmatch-8.5.2.tar.gz", hash = "sha256:a70222b86dea82fb382dd87b73278c10756c138bd6f8f714e2183128887b9eb2"},
+]
+
+[package.dependencies]
+bracex = ">=2.1.1"
+
+[[package]]
 name = "wcwidth"
 version = "0.2.13"
 description = "Measures the displayed width of unicode strings in a terminal"
@@ -1433,4 +1459,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10,<4.0"
-content-hash = "84026734086b825b642c185c0e6b42d842de5f45b4a1d7d3181b4a03487888a1"
+content-hash = "ba4f4904419ffb70f32c14bceddadbd7193b05841596f78c0eab7b83516d0008"
